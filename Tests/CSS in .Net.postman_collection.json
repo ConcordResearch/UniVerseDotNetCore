@@ -34,7 +34,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"10.128.0.112\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"CssDataFile\": {\r\n    \"AccountListName\": \"LET.LINK\"\r\n  }\r\n}"
+					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"CssDataFile\": {\r\n    \"AccountListName\": \"LET.LINK\"\r\n  }\r\n}"
 				},
 				"url": {
 					"raw": "https://localhost:44336/api/AccountList",
@@ -80,7 +80,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"10.128.0.112\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1360\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"Contracts\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1360\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
+					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1360\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"Contracts\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1360\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
 				},
 				"url": {
 					"raw": "https://localhost:44336/api/ContractsFilter",
@@ -126,7 +126,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"10.128.0.112\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1075\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"MAINT\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1076\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
+					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1075\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"MAINT\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1076\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
 				},
 				"url": {
 					"raw": "https://localhost:44336/api/MaintFilter",
