@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "bde4c68f-bddd-4127-a747-04cf605c7b81",
+		"name": "CSS in .Net",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "File",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4087105e-faf9-49be-81f4-634f6d3a4444",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"10.128.0.112\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"CssDataFile\": {\r\n    \"AccountListName\": \"LET.LINK\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44336/api/AccountList",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"api",
+						"AccountList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterContracts",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4087105e-faf9-49be-81f4-634f6d3a4444",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"10.128.0.112\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1360\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"Contracts\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1360\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44336/api/ContractsFilter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"api",
+						"ContractsFilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterMaint",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4087105e-faf9-49be-81f4-634f6d3a4444",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"10.128.0.112\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1075\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"MAINT\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1076\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44336/api/MaintFilter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"api",
+						"MaintFilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criterion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://localhost:44336/api/Criteria",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"api",
+						"Criteria"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
