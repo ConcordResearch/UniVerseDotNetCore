@@ -61,7 +61,7 @@ namespace UniVerseDotNetCore.Controllers
         {
             return JsonConvert.SerializeObject(Projects);
         }
-
+         
         /// <summary>
         /// Retrieves the set of Lenders that the user has access to
         /// </summary>
