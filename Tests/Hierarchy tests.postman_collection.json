@@ -1,0 +1,122 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Hierarchy tests",
+		"_postman_id": "254b11aa-23f3-fc58-7b2a-8c23768ce5bf",
+		"description": "Tests that excercise the retriaval of Developers, Projects and Lenders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Developers",
+			"request": {
+				"url": "http://appiandemo.dest.internal:5512/api/hierarchy/developers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Retrieves a list of the developers for this user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Projects",
+			"request": {
+				"url": {
+					"raw": "http://appiandemo.dest.internal:5512/api/hierarchy/projects?developers=0010,0020",
+					"protocol": "http",
+					"host": [
+						"appiandemo",
+						"dest",
+						"internal"
+					],
+					"port": "5512",
+					"path": [
+						"api",
+						"hierarchy",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "developers",
+							"value": "0010,0020",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Retrieves a list of the projects a user has access to"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lenders",
+			"request": {
+				"url": {
+					"raw": "http://appiandemo.dest.internal:5512/api/hierarchy/lenders?developers=0010,0020,0030",
+					"protocol": "http",
+					"host": [
+						"appiandemo",
+						"dest",
+						"internal"
+					],
+					"port": "5512",
+					"path": [
+						"api",
+						"hierarchy",
+						"lenders"
+					],
+					"query": [
+						{
+							"key": "developers",
+							"value": "0010,0020,0030",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Retrieves a list of the projects a user has access to"
+			},
+			"response": []
+		}
+	]
+}
