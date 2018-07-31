@@ -1,24 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
 
-namespace UniVerseDotNetCore.Models
+
+namespace UniVerseDotNetCore.Domain.Models
 {
-    public class AccountFilterCriteria<T> where T : CSSAccountFile, new()
+    public class AccountFilterCriteria<T> where T : CssAccountFile, new()
     {
-
         public string DeveloperCode { get; set; }
         public  T CssFileName { get;  set; }
 
         public List<Criterion> Criteria { get; set; }
-
-
+        
         public AccountFilterCriteria()
         {
             Criteria = new List<Criterion>();
             CssFileName = new T();
         }
+
         public AccountFilterCriteria(string developerCode) : this()
         {
             DeveloperCode = developerCode;
@@ -29,6 +28,7 @@ namespace UniVerseDotNetCore.Models
             Criteria.Add(criterion);
             return Criteria;
         }
+
         public List<Criterion> AddCriteria(IEnumerable<Criterion> criteria)
         {
             Criteria.ToList().AddRange(criteria);
@@ -48,17 +48,18 @@ namespace UniVerseDotNetCore.Models
             }
 
             var query = new StringBuilder();
+            query.Append($"SELECT {CssFileName} WITH ");
+
             foreach (var filter in Criteria)
             {
-                if (query.Length != 0 )
+                if (!query.ToString().EndsWith("WITH "))
                 {
                     query.Append( " AND ");
                 }
                 query.Append( filter.Attribute + "=\""  + filter.Filter + "\"");
             }
 
-            query.Append($"SELECT {CssFileName} WITH " + query);
-
+            
             return query.ToString();
         }
     }

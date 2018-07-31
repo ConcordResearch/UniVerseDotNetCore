@@ -1,6 +1,6 @@
-﻿namespace UniVerseDotNetCore.Models
+﻿namespace UniVerseDotNetCore.Domain.Models
 {
-    public class CSSAccountFile
+    public class CssAccountFile
     {
         public virtual string FileName
         {

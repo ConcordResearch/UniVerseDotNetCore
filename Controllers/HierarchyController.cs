@@ -1,7 +1,7 @@
-﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+ 
 
 namespace UniVerseDotNetCore.Controllers
 {
@@ -56,6 +56,7 @@ namespace UniVerseDotNetCore.Controllers
         /// Retrieves the set of Developers that the user has access to
         /// </summary>
         /// <returns>Json array of the Developer codes and the text names of the Developers.</returns>
+ 
         [HttpGet("developers")]
         public string GetDevelopers()
         {
@@ -68,6 +69,7 @@ namespace UniVerseDotNetCore.Controllers
         /// Retrieves the set of Projects that the user has access to
         /// </summary>
         /// <returns>Json array of the Lender codes and the text names of the Projects.</returns>
+
         [HttpGet("projects")]
         public string GetProjects([FromQuery(Name = "developers")] string developers)
         {
@@ -81,6 +83,7 @@ namespace UniVerseDotNetCore.Controllers
         /// Retrieves the set of Lenders that the user has access to
         /// </summary>
         /// <returns>Json array of the Lender codes and the text names of the Lenders.</returns>
+
         [HttpGet("lenders")]
         public string GetLenders([FromQuery(Name = "developers")] string developers)
         {

@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using UniVerseDotNetCore.CSSLayer;
-using UniVerseDotNetCore.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using UniVerseDotNetCore.Domain.CssServiceLayer;
+using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
+using UniVerseDotNetCore.Domain.Models;
+
 
 namespace UniVerseDotNetCore.Controllers
 {
@@ -12,17 +12,18 @@ namespace UniVerseDotNetCore.Controllers
     {
 
         [HttpGet]
-        public string GetReturnAccountListModel()
+        public JsonResult GetReturnAccountListModel()
         {
-            return JsonConvert.SerializeObject(new CssCallModel());
+           var file = new Contracts();
+            return new JsonResult( new CssCallModel(file));
         }
     
         [HttpPost]
-        public ActionResult<string> ReturnFile(CssCallModel model)
+        public JsonResult ReturnFile([FromBody] CssCallModel model)
         {
-            var data = CssCaller.GetFileData(model.CssDataFile, model.Credentials);
-            Console.WriteLine(data);
-            return data;
+            var data = Utils.GetData(model.CssDataFile,model.File, model.Credentials);
+ 
+            return new JsonResult(data);
         }
 
        

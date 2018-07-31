@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace UniVerseDotNetCore.Models
+﻿namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
 {
     public class CssCredentialsModel
     { 
