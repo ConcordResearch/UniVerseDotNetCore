@@ -1,8 +1,8 @@
 ﻿namespace UniVerseDotNetCore.Domain.Models
 {
-    public class Contracts : CSSAccountFile
+    public class Contracts : CssAccountFile
     {
         
-        public override string FileName => this.GetType().Name.ToUpper();
+        public override string FileName => GetType().Name.ToUpper();
     }
 }

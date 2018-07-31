@@ -1,6 +1,6 @@
 ﻿namespace UniVerseDotNetCore.Domain.Models
 {
-    public class Maint : CSSAccountFile
+    public class Maint : CssAccountFile
     {
         private string _fileName;
 
@@ -8,7 +8,7 @@
         {
             get => _fileName;
 
-            set => _fileName = this.GetType().Name.ToUpper();
+            set => _fileName = GetType().Name.ToUpper();
         }
 
     }

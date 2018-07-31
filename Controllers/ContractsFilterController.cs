@@ -27,9 +27,9 @@ namespace UniVerseDotNetCore.Controllers
             var usernameSplit = model.Credentials.User.Split("\\");
             var username = usernameSplit.Length == 2 ? usernameSplit[1].ToUpper() : "unknown";
 
-            var listname = $"{username}.{model.FilterCriteria.CssFileName.ToString().ToUpper()}.{CssCaller.GetRandomString()}";
+            var listname = $"{username}.{model.FilterCriteria.CssFileName.ToString().ToUpper()}.{Utils.GetRandomString()}";
             var name = new AccountList(){AccountListName = listname};
-            var data = CssCaller.FilterContracts(model.FilterCriteria, name, model.Credentials);
+            var data = FilterCapability.FilterContracts(model.FilterCriteria, name, model.Credentials);
 
             return new JsonResult(new {ListName = name.ToString(), FilterResultLog = data});
            

@@ -30,7 +30,7 @@ namespace UniVerseDotNetCore.Controllers
         [HttpPost]
         public JsonResult ChangeAccountCodeModel([FromBody] ChangeItRequest<AccountCode> request)
         {
-            var response = CssCaller.ChangeAccountCode(request.File, request.GetListName, request.NewCode, request.Note, request.Credentials);
+            var response = ChangeItCapability.ChangeAccountCode(request.File, request.GetListName, request.NewCode, request.Note, request.Credentials);
             return new JsonResult(response);
         }
     }

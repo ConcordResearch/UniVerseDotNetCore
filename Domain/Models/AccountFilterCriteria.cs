@@ -5,7 +5,7 @@ using System.Text;
 
 namespace UniVerseDotNetCore.Domain.Models
 {
-    public class AccountFilterCriteria<T> where T : CSSAccountFile, new()
+    public class AccountFilterCriteria<T> where T : CssAccountFile, new()
     {
         public string DeveloperCode { get; set; }
         public  T CssFileName { get;  set; }

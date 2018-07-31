@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
+﻿using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 using UniVerseDotNetCore.Domain.Models;
 
 namespace UniVerseDotNetCore.Models
@@ -16,7 +11,7 @@ namespace UniVerseDotNetCore.Models
         {
             
         }
-        public ChangeItRequest(string changeType, AccountList getList, CssCredentialsModel credentials, CSSAccountFile file,Note note)
+        public ChangeItRequest(string changeType, AccountList getList, CssCredentialsModel credentials, CssAccountFile file,Note note)
         {
             TypeOfChange = changeType;
             GetListName = getList;
@@ -30,7 +25,7 @@ namespace UniVerseDotNetCore.Models
 
         public AccountList GetListName { get; set; }
         public CssCredentialsModel Credentials { get; set; }
-        public CSSAccountFile File { get; set; }
+        public CssAccountFile File { get; set; }
         public Note Note { get; set; }
     }
 

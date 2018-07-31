@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace UniVerseDotNetCore.Domain.Models
+﻿namespace UniVerseDotNetCore.Domain.Models
 {
     public class ProjectCode : IChangeIt2
     {

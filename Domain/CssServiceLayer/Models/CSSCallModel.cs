@@ -10,7 +10,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
         {
             
         }
-        public CssCallModel(CSSAccountFile file)
+        public CssCallModel(CssAccountFile file)
         {
             File = file;
             Credentials = new CssCredentialsModel();
@@ -18,7 +18,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
             
         }
        
-        public CssCallModel(CssCredentialsModel credentials, AccountList accountList, CSSAccountFile file)
+        public CssCallModel(CssCredentialsModel credentials, AccountList accountList, CssAccountFile file)
         {
             Credentials = credentials;
             CssDataFile = accountList;
@@ -27,7 +27,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
 
         public CssCredentialsModel Credentials { get; set; }
         public AccountList CssDataFile { get; set; }
-        public CSSAccountFile File { get; set; }
+        public CssAccountFile File { get; set; }
 
     }
 }

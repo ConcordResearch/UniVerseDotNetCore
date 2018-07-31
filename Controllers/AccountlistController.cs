@@ -21,7 +21,7 @@ namespace UniVerseDotNetCore.Controllers
         [HttpPost]
         public JsonResult ReturnFile([FromBody] CssCallModel model)
         {
-            var data = CssCaller.GetData(model.CssDataFile,model.File, model.Credentials);
+            var data = Utils.GetData(model.CssDataFile,model.File, model.Credentials);
  
             return new JsonResult(data);
         }

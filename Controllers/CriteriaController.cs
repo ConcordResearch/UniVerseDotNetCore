@@ -21,12 +21,14 @@ namespace UniVerseDotNetCore.Controllers
             //Days delinquent
             //Credit score
 
-            var criterion = new List<Criterion>();
-            criterion.Add(new Criterion() { Attribute = "DEV.CODE", Filter = "1075" });
-            criterion.Add(new Criterion() { Attribute = "PROJ.CODE", Filter = "1076" });
-            criterion.Add(new Criterion() { Attribute = "AC", Filter = "N" });
-            criterion.Add(new Criterion() { Attribute = "DAYS.DELINQ", Filter = "43" });
-           
+            var criterion = new List<Criterion>
+            {
+                new Criterion() {Attribute = "DEV.CODE", Filter = "1075"},
+                new Criterion() {Attribute = "PROJ.CODE", Filter = "1076"},
+                new Criterion() {Attribute = "AC", Filter = "N"},
+                new Criterion() {Attribute = "DAYS.DELINQ", Filter = "43"}
+            };
+
             return criterion;
         }
 
