@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UniVerseDotNetCore.CSSLayer;
-using UniVerseDotNetCore.Models;
+using UniVerseDotNetCore.Domain.CssServiceLayer;
+using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
+using UniVerseDotNetCore.Domain.Models;
+
 
 namespace UniVerseDotNetCore.Controllers
 {
@@ -25,14 +25,17 @@ namespace UniVerseDotNetCore.Controllers
         [HttpPost] 
         public ActionResult<string> ReturnMaintFile([FromBody] MaintFilterCallModel model)
         {
-            var name = new AccountList(){AccountListName = CssCaller.GetRandomString()};
-            var data = CssCaller.FilterMaint(model.FilterCriteria, name, model.Credentials);
+            var usernameSplit = model.Credentials.User.Split("\\");
+            var username = usernameSplit.Length == 2 ? usernameSplit[1].ToUpper() : "unknown";
 
-            return JsonConvert.SerializeObject(new {ListName = name.ToString(), FilterLog = data});
-           
+            var listname = $"{username}.{model.FilterCriteria.CssFileName.ToString().ToUpper()}.{CssCaller.GetRandomString()}";
+            var name = new AccountList(){AccountListName = listname};
+            var data = CssCaller.FilterMaint(model.FilterCriteria, name, model.Credentials);
+            return new JsonResult(new { ListName = name.ToString(), FilterResultLog = data });
+
 
         }
 
-       
+
     }
 }

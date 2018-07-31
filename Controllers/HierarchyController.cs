@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UniVerseDotNetCore.CSSLayer;
-using UniVerseDotNetCore.Models;
+
 
 namespace UniVerseDotNetCore.Controllers
 {
@@ -47,6 +45,7 @@ namespace UniVerseDotNetCore.Controllers
         /// </summary>
         /// <returns>Json array of the Developer codes and the text names of the Developers.</returns>
         [HttpGet]
+        [Route("/developers")]
         public string GetDevelopers()
         {
             return JsonConvert.SerializeObject(Developers);
@@ -57,6 +56,7 @@ namespace UniVerseDotNetCore.Controllers
         /// </summary>
         /// <returns>Json array of the Lender codes and the text names of the Projects.</returns>
         [HttpGet]
+        [Route("/projects")]
         public string GetProjects()
         {
             return JsonConvert.SerializeObject(Projects);
@@ -67,6 +67,7 @@ namespace UniVerseDotNetCore.Controllers
         /// </summary>
         /// <returns>Json array of the Lender codes and the text names of the Lenders.</returns>
         [HttpGet]
+        [Route("/lenders")]
         public string GetLenders()
         {
             return JsonConvert.SerializeObject(Lenders);

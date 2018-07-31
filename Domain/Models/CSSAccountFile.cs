@@ -1,4 +1,4 @@
-﻿namespace UniVerseDotNetCore.Models
+﻿namespace UniVerseDotNetCore.Domain.Models
 {
     public class CSSAccountFile
     {

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using UniVerseDotNetCore.CSSLayer;
-using UniVerseDotNetCore.Models;
+using UniVerseDotNetCore.Domain.Models;
+
 
 namespace UniVerseDotNetCore.Controllers
 {

@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using UniVerseDotNetCore.Domain.Models;
 
-namespace UniVerseDotNetCore.Models
+namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
 {
     public class ContractsFilterCallModel 
     {
