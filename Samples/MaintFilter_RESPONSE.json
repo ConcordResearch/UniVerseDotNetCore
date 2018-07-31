@@ -1,0 +1,23 @@
+{
+    "listName": "AGHERRERA.MAINT.FN1IRYQJ",
+    "filterResultLog": {
+        "results": [
+            {
+                "action": "SELECT MACTIVE.IDX WITH DEV.CODE = \"1075\"",
+                "resopose": "\r\n27 record(s) selected to SELECT list #0.\r\n"
+            },
+            {
+                "action": "QSELECT MACTIVE.IDX",
+                "resopose": "\r\n27192 record(s) selected to SELECT list #0.\r\n"
+            },
+            {
+                "action": "SELECT MAINT WITH PROJ.CODE=\"1076\" AND AC=\"H\"",
+                "resopose": "\r\n0 record(s) selected to SELECT list #0.\r\n"
+            },
+            {
+                "action": "SAVE-LIST AGHERRERA.MAINT.FN1IRYQJ",
+                "resopose": "\r\n0 record(s) SAVEd to SELECT list \"AGHERRERA.MAINT.FN1IRYQJ\".\r\n"
+            }
+        ]
+    }
+}

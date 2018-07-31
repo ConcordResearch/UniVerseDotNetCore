@@ -1,0 +1,27 @@
+{
+  "Credentials": {
+    "User": "{{Username}}",
+    "UserPassword": "{{Password}}",
+      "Hostname": "{{Hostname}}",
+    "Account": "CONCORD",
+    "ServiceType": "uvcs"
+  },
+  "FilterCriteria": {
+  	"DeveloperCode" : "1360",
+    "CssFileName": {
+      "FileName": "Contracts"
+    },
+    "Criteria": [
+       {
+        "Attribute": "PROJ.CODE",
+        "Filter": "1360"
+      },
+      {
+        "Attribute": "AC",
+        "Filter": "N"
+      }
+    ]
+  }
+  
+ 
+}

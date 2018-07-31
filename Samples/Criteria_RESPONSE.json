@@ -1,0 +1,18 @@
+[
+    {
+        "attribute": "DEV.CODE",
+        "filter": "1075"
+    },
+    {
+        "attribute": "PROJ.CODE",
+        "filter": "1076"
+    },
+    {
+        "attribute": "AC",
+        "filter": "N"
+    },
+    {
+        "attribute": "DAYS.DELINQ",
+        "filter": "43"
+    }
+]

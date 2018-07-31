@@ -1,0 +1,22 @@
+{ 
+	"file": {
+        "fileName": "MAINT"
+    },
+    "newCode": {
+        "code": "X"
+    },
+    "typeOfChange": "AccountCode",
+    "getListName": {
+        "accountListName": "AGHERRERA.MAINT.0TZHOZM4"
+    },
+     "note": {
+        "message": "This is MY note."
+    },
+    "Credentials": {
+    "User": "{{Username}}",
+    "UserPassword": "{{Password}}",
+      "Hostname": "{{Hostname}}",
+    "Account": "CONCORD",
+    "ServiceType": "uvcs"
+   }
+}

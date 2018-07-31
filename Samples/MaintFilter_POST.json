@@ -1,0 +1,27 @@
+{
+  "Credentials": {
+    "User": "{{Username}}",
+    "UserPassword": "{{Password}}",
+      "Hostname": "{{Hostname}}",
+    "Account": "CONCORD",
+    "ServiceType": "uvcs"
+  },
+  "FilterCriteria": {
+  	"DeveloperCode" : "1075",
+    "CssFileName": {
+      "FileName": "MAINT"
+    },
+    "Criteria": [
+       {
+        "Attribute": "PROJ.CODE",
+        "Filter": "1076"
+      },
+      {
+        "Attribute": "AC",
+        "Filter": "H"
+      }
+    ]
+  }
+  
+ 
+}

@@ -1,0 +1,96 @@
+{
+    "results": [
+        {
+            "action": "Response Line: 1",
+            "resopose": ""
+        },
+        {
+            "action": "Response Line: 2",
+            "resopose": "(CHANGE.IT)        CONTRACTS/MAINTENANCE - CHANGE IT        16:10:05 31 JUL 2018"
+        },
+        {
+            "action": "Response Line: 3",
+            "resopose": "ENTER THE LIST NAME YOU ARE USING ?AGHERRERA.MAINT.0TZHOZM4"
+        },
+        {
+            "action": "Response Line: 4",
+            "resopose": "ARE THESE 'C'ONTRACT OR 'M'AINTENANCE IDS? ?M"
+        },
+        {
+            "action": "Response Line: 5",
+            "resopose": "CHANGE CONTRACTS TOO? (IF APPLICABLE) ?N"
+        },
+        {
+            "action": "Response Line: 6",
+            "resopose": ""
+        },
+        {
+            "action": "Response Line: 7",
+            "resopose": "ACTIVE LIST - AGHERRERA.MAINT.0TZHOZM4"
+        },
+        {
+            "action": "Response Line: 8",
+            "resopose": "ENTER NEW DEVELOPER CODE, IF ANY ?"
+        },
+        {
+            "action": "Response Line: 9",
+            "resopose": "ENTER NEW PROJECT CODE, IF ANY ?1075"
+        },
+        {
+            "action": "Response Line: 10",
+            "resopose": "ENTER NEW LENDER CODE, IF ANY ?"
+        },
+        {
+            "action": "Response Line: 11",
+            "resopose": "ENTER NEW ACCOUNT CODE, IF ANY ?"
+        },
+        {
+            "action": "Response Line: 12",
+            "resopose": ""
+        },
+        {
+            "action": "Response Line: 13",
+            "resopose": "ENTER A NOTE FOR ALL ACCOUNTS (IF ANY) ?This is MY note."
+        },
+        {
+            "action": "Response Line: 14",
+            "resopose": "ENTER NOTE TYPE FOR ALL ACCOUNTS (G or P) (<CR>='G') ?G"
+        },
+        {
+            "action": "Response Line: 15",
+            "resopose": ""
+        },
+        {
+            "action": "Response Line: 16",
+            "resopose": "12 record(s) selected to SELECT list #0."
+        },
+        {
+            "action": "Response Line: 17",
+            "resopose": "  TOTAL MAINT BALANCE OF THESE ACCOUNTS IS 15059.83"
+        },
+        {
+            "action": "Response Line: 18",
+            "resopose": "OKAY TO PROCEED? (Y/N) ?Y"
+        },
+        {
+            "action": "Response Line: 19",
+            "resopose": ""
+        },
+        {
+            "action": "Response Line: 20",
+            "resopose": "12 record(s) selected to SELECT list #0."
+        },
+        {
+            "action": "Response Line: 21",
+            "resopose": ""
+        },
+        {
+            "action": "Response Line: 22",
+            "resopose": "FINISHED...."
+        },
+        {
+            "action": "Response Line: 23",
+            "resopose": ""
+        }
+    ]
+}

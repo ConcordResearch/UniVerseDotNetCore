@@ -1,0 +1,23 @@
+{
+    "listName": "AGHERRERA.CONTRACTS.K3AAKHJH",
+    "filterResultLog": {
+        "results": [
+            {
+                "action": "SELECT ACTIVE.IDX WITH DEV.CODE = \"1360\"",
+                "resopose": "\r\n13 record(s) selected to SELECT list #0.\r\n"
+            },
+            {
+                "action": "QSELECT ACTIVE.IDX",
+                "resopose": "\r\n744 record(s) selected to SELECT list #0.\r\n"
+            },
+            {
+                "action": "SELECT CONTRACTS WITH PROJ.CODE=\"1360\" AND AC=\"N\"",
+                "resopose": "\r\n1 record(s) selected to SELECT list #0.\r\n"
+            },
+            {
+                "action": "SAVE-LIST AGHERRERA.CONTRACTS.K3AAKHJH",
+                "resopose": "\r\n1 record(s) SAVEd to SELECT list \"AGHERRERA.CONTRACTS.K3AAKHJH\".\r\n"
+            }
+        ]
+    }
+}
