@@ -26,7 +26,8 @@ namespace UniVerseDotNetCore.Controllers
                 new Criterion() {Attribute = "DEV.CODE", Filter = "1075"},
                 new Criterion() {Attribute = "PROJ.CODE", Filter = "1076"},
                 new Criterion() {Attribute = "AC", Filter = "N"},
-                new Criterion() {Attribute = "DAYS.DELINQ", Filter = "43"}
+                new Criterion() {Attribute = "DAYS.DELINQ", Filter = "43"},
+                new Criterion() {Attribute = "CREDIT.SCORE", Filter = "700"}
             };
 
             return criterion;

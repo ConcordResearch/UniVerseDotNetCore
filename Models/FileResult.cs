@@ -3,15 +3,15 @@ using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 
 namespace UniVerseDotNetCore.Models
 {
-    public class FileResult
+    public class CssFileResult
     {
-        public FileResult()
+        public CssFileResult()
         {
-            Results = new List<CommandResponse>();
+            CssResponses = new CssCommandResult();
             FileContents = new CssFile();
         }
       
-        public List<CommandResponse> Results { get; set; }
+        public CssCommandResult CssResponses { get; set; }
         public CssFile FileContents { get; set; }
     }
 }

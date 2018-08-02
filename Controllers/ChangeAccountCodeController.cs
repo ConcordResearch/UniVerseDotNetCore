@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using UniVerseDotNetCore.Domain.CssServiceLayer;
 using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 using UniVerseDotNetCore.Domain.Models;
@@ -30,7 +31,19 @@ namespace UniVerseDotNetCore.Controllers
         [HttpPost]
         public JsonResult ChangeAccountCodeModel([FromBody] ChangeItRequest<AccountCode> request)
         {
-            var response = ChangeItCapability.ChangeAccountCode(request.File, request.GetListName, request.NewCode, request.Note, request.Credentials);
+            if (CssAppConfig.RunInTestMode)
+            {
+                var results = new CssCommandResult()
+                {
+                    Results = new List<CommandResponse>()
+                    {
+                        new CommandResponse("sample css action","sample css response"),
+                        new CommandResponse("sample css action","sample css response")
+                    }
+                };
+                return new JsonResult(results);
+            }
+            CssCommandResult response = ChangeItCapability.ChangeAccountCode(request.File, request.GetListName, request.NewCode, request.Note, request.Credentials);
             return new JsonResult(response);
         }
     }

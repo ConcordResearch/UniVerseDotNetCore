@@ -16,7 +16,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
             return path;
         }
 
-        public static FileResult GetData(AccountList list, CssAccountFile file, CssCredentialsModel cssCredentialsModel)
+        public static CssFileResult GetData(AccountList list, CssAccountFile file, CssCredentialsModel cssCredentialsModel)
         {
 
             var lHostName = cssCredentialsModel.Hostname;
@@ -25,7 +25,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
             var lPassword = cssCredentialsModel.UserPassword;
             var lServiceType = cssCredentialsModel.ServiceType;
 
-            var response = new FileResult();
+            var response = new CssFileResult();
             var fileResults = new CssFile {FileName = list.AccountListName};
 
             UniSession us = null;
@@ -75,7 +75,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
             }
             catch (Exception ex)
             {
-                response.Results.Add(new CommandResponse("Exception", ex.ToString()));
+                response.CssResponses.Results.Add(new CommandResponse("Exception", ex.ToString()));
 
             }
             finally
@@ -85,7 +85,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
                     UniObjects.CloseSession(us);
                 }
             }
-            response.Results.Add(new CommandResponse("Error", "There was an error procesing your request."));
+            response.CssResponses.Results.Add(new CommandResponse("Error", "There was an error procesing your request."));
             return response;
         }
     }

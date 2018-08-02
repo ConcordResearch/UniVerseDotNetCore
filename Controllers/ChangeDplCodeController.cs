@@ -10,26 +10,26 @@ namespace UniVerseDotNetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ChangeLenderCodeController : ControllerBase
+    public class ChangeDplCodeController : ControllerBase
     {
         [HttpGet]
-        public JsonResult GetChangeLenderModel()
+        public JsonResult GetChangeDplModel()
         {
-            var sample = new ChangeItRequest<LenderCode>
+            var sample = new ChangeItRequest<DplCode>
             {
                 Note = new Note("This is a note"),
                 Credentials = new CssCredentialsModel(),
                 File = new Contracts(),
                 GetListName = new AccountList("NameOfAccountList"),
-                TypeOfChange = "LenderCode",
-                NewCode = new LenderCode("100")
+                TypeOfChange = "DplCode",
+                NewCode = new DplCode("10751075100")
 
             };
 
             return new JsonResult(sample);
         }
         [HttpPost]
-        public JsonResult ChangeLenderModel([FromBody] ChangeItRequest<LenderCode> request)
+        public JsonResult ChangeDplModel([FromBody] ChangeItRequest<DplCode> request)
         {
             if (CssAppConfig.RunInTestMode)
             {
@@ -43,7 +43,13 @@ namespace UniVerseDotNetCore.Controllers
                 };
                 return new JsonResult(results);
             }
-            CssCommandResult response = ChangeItCapability.ChangeLenderCode(request.File, request.GetListName,request.NewCode,request.Note, request.Credentials);
+            System.Console.WriteLine($"TESTING: {request.NewCode.GetDeveloperCode()}, {request.NewCode.GetProjectCode()}, {request.NewCode.GetLenderCode()}");
+            var response = 
+            ChangeItCapability.ChangeDplCode(request.File,
+                                    request.GetListName,
+                                    request.NewCode,
+                                    request.Note,
+                                    request.Credentials);
             return new JsonResult(response);
         }
      

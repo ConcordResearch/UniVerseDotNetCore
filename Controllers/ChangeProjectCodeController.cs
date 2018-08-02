@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using UniVerseDotNetCore.Domain.CssServiceLayer;
 using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 using UniVerseDotNetCore.Domain.Models;
@@ -26,13 +27,27 @@ namespace UniVerseDotNetCore.Controllers
 
             return new JsonResult(sample);
         }
-      
+
         [HttpPost]
         public JsonResult ChangeProjectCodeModel([FromBody] ChangeItRequest<ProjectCode> request)
         {
-                var response = ChangeItCapability.ChangeProjectCode(request.File, request.GetListName, request.NewCode, request.Note, request.Credentials);
+            if (CssAppConfig.RunInTestMode)
+            {
+                var results = new CssCommandResult()
+                {
+                    Results = new List<CommandResponse>()
+                    {
+                        new CommandResponse("sample css action","sample css response"),
+                        new CommandResponse("sample css action","sample css response")
+                    }
+                };
+                return new JsonResult(results);
+            }
+
+
+            CssCommandResult response = ChangeItCapability.ChangeProjectCode(request.File, request.GetListName, request.NewCode, request.Note, request.Credentials);
             return new JsonResult(response);
         }
-        
+
     }
 }

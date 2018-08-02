@@ -12,16 +12,24 @@
 				{
 					"name": "Change Account Code",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"X\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.AZ2AJET1\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
 						"url": {
-							"raw": "https://localhost:44336/api/ChangeAccountCode",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeAccountCode",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"ChangeAccountCode"
@@ -29,7 +37,13 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "DPL Code",
+			"description": "",
+			"item": [
 				{
 					"name": "Change Account Code",
 					"request": {
@@ -42,18 +56,18 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"X\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.MAINT.0TZHOZM4\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"66006607200\"\n    },\n    \"typeOfChange\": \"DplCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
 						},
 						"url": {
-							"raw": "https://localhost:44336/api/ChangeAccountCode",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeDplCode",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
-								"ChangeAccountCode"
+								"ChangeDplCode"
 							]
 						}
 					},
@@ -77,36 +91,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"100\"\n    },\n    \"typeOfChange\": \"LenderCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.MAINT.0TZHOZM4\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"100\"\n    },\n    \"typeOfChange\": \"LenderCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
 						},
 						"url": {
-							"raw": "https://localhost:44336/api/ChangeLenderCode",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeLenderCode",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
-							"path": [
-								"api",
-								"ChangeLenderCode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ChangeLenderCode",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "https://localhost:44336/api/ChangeLenderCode",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"ChangeLenderCode"
@@ -133,36 +126,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"1075\"\n    },\n    \"typeOfChange\": \"ProjectCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.MAINT.0TZHOZM4\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"6607\"\n    },\n    \"typeOfChange\": \"ProjectCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
 						},
 						"url": {
-							"raw": "https://localhost:44336/api/ChangeProjectCode",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeProjectCode",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
-							"path": [
-								"api",
-								"ChangeProjectCode"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Change Project Code",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "https://localhost:44336/api/ChangeProjectCode",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"ChangeProjectCode"
@@ -206,15 +178,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1360\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"Contracts\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1360\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
+							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"6600\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"Contracts\"\r\n    },\r\n    \"Criteria\": [\r\n        {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"6606\"\r\n      },\r\n       {\r\n        \"Attribute\": \"LEND.CODE\",\r\n        \"Filter\": \"200\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
 						},
 						"url": {
-							"raw": "https://localhost:44336/api/ContractsFilter",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/ContractsFilter",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"ContractsFilter"
@@ -255,12 +227,12 @@
 							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1075\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"MAINT\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1076\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"H\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
 						},
 						"url": {
-							"raw": "https://localhost:44336/api/MaintFilter",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/MaintFilter",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"MaintFilter"
@@ -276,12 +248,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://localhost:44336/api/Criteria",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/Criteria",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"Criteria"
@@ -328,12 +300,12 @@
 							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"CssDataFile\": {\r\n    \"AccountListName\": \"WTENUHL2\"\r\n  },\r\n  \"file\": {\r\n    \"fileName\": \"CONTRACTS\"\r\n  }\r\n}"
 						},
 						"url": {
-							"raw": "https://localhost:44336/api/AccountList",
+							"raw": "https://localhost:{{DotNetCorePort}}/api/AccountList",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44336",
+							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
 								"AccountList"
