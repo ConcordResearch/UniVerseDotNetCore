@@ -13,7 +13,13 @@ RUN dotnet build UniVerseDotNetCore.csproj -c Release -o /app
 FROM build AS publish
 RUN dotnet publish UniVerseDotNetCore.csproj -c Release -o /app
 
+
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+
+# Environment variables
+#ENV RUN_IN_TEST_MODE "Yes"
+ENV RUN_IN_TEST_MODE "No"
+
 ENTRYPOINT ["dotnet", "UniVerseDotNetCore.dll"]
