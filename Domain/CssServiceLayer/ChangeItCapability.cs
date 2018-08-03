@@ -6,6 +6,21 @@ using UniVerseDotNetCore.Models;
 
 namespace UniVerseDotNetCore.Domain.CssServiceLayer {
     public static class ChangeItCapability {
+        private static string _cssUserName = null;
+        private static string _cssUserPassword = null;
+        private static string _cssHostname = null;
+        private static string _cssAccount = null;
+        private const string CssServiceType = "uvcs";
+
+        public static bool SetEnvironmentValues(string userName, string userPassword, string hostname, string account)
+        {
+            _cssUserName = userName;
+            _cssUserPassword = userPassword;
+            _cssHostname = hostname;
+            _cssAccount = account;
+
+            return true; //in case we need validation in future
+        }
         public static CssCommandResult ChangeLenderCode (CssAccountFile file, AccountList list, LenderCode newCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
 
             return ChangeIt2 (file, list, "", "", newCode.Code, "", changeNote, cssCredentialsModel);
@@ -24,11 +39,13 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer {
         }
         private static CssCommandResult ChangeIt2 (CssAccountFile file, AccountList list, string developerCode, string projectCode, string lenderCode, string accountCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
             var result = new CssCommandResult ();
-            var lHostName = cssCredentialsModel.Hostname;
-            var lAccount = cssCredentialsModel.Account;
-            var lUser = cssCredentialsModel.User;
-            var lPassword = cssCredentialsModel.UserPassword;
-            var lServiceType = cssCredentialsModel.ServiceType;
+
+            var lHostName = _cssHostname ?? cssCredentialsModel.Hostname;
+            var lAccount = _cssAccount ?? cssCredentialsModel.Account;
+            var lUser = _cssUserName ?? cssCredentialsModel.User;
+            var lPassword = _cssUserPassword ?? cssCredentialsModel.UserPassword;
+            const string lServiceType = CssServiceType;
+
             string fileInitial = file.FileName.ToCharArray () [0].ToString ();
             UniSession us = null;
 

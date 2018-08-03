@@ -37,13 +37,17 @@ namespace UniVerseDotNetCore
                 Console.WriteLine($" Using demo data ({CssAppConfig.RunInTestMode})");
             }
 
-            // or get all
-            //foreach (var env in configuration.GetChildren())
-            //{
-            //    Console.WriteLine($"{env.Key}:{env.Value}");
-            //}
 
-
+            CssAppConfig.CssUserName = configuration.GetSection("CSS_USERNAME").Value;
+            CssAppConfig.CssUserPassword = configuration.GetSection("CSS_USERPASSWORD").Value;
+            CssAppConfig.CssAccount = configuration.GetSection("CSS_ACCOUNT").Value;
+            CssAppConfig.CssHostname = configuration.GetSection("CSS_HOSTNAME").Value;
+            var setValues = CssAppConfig.SetCssEnvironmentValues();
+            if (!setValues)
+            {
+                Console.WriteLine($"Error setting environment values for CSS.");
+                return;
+            }
 
             CreateWebHostBuilder(args).Build().Run();
 
