@@ -37,7 +37,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
         {
             return Filter("ACTIVE.IDX", contractsFilter.DeveloperCode, contractsFilter.ToString(), saveList, cssCredentials);
         }
-        public static CssCommandResult MakeCustomGetList(IEnumerable<string> list, AccountList saveList, CssCredentials cssCredentials)
+        public static CssCommandResult MakeCustomGetList(IEnumerable<AccountModel> list, AccountList saveList, CssCredentials cssCredentials)
         {
             return CustomGetList(list, saveList, cssCredentials);
         }
@@ -96,7 +96,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
             return result;
         }
 
-        private static CssCommandResult CustomGetList(IEnumerable<string> accountList, AccountList saveListName, CssCredentials cssCredentials)
+        private static CssCommandResult CustomGetList(IEnumerable<AccountModel> accountList, AccountList saveListName, CssCredentials cssCredentials)
         {
             var result = new CssCommandResult();
             var lHostName = _cssHostname ?? cssCredentials.Hostname;
@@ -122,7 +122,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
 
                 foreach (var account in accountList)
                 {
-                    cmd.Reply($"{account}");
+                    cmd.Reply($"{account.Account}");
                 }
                 cmd.Reply(""); // Send empty marker to close list
 

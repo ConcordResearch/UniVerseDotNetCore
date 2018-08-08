@@ -8,9 +8,10 @@ namespace UniVerseDotNetCore.Models
         public CustomGetList()
         {
             Credentials = new CssCredentials();
-            Accounts = new List<string>();
+            Accounts = new List<AccountModel>();
         }
+
         public CssCredentials Credentials { get; set; }
-        public IEnumerable<string> Accounts { get; set; }
+        public IEnumerable<AccountModel> Accounts { get; set; }
     }
 }
