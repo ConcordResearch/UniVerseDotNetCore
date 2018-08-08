@@ -15,7 +15,8 @@ namespace UniVerseDotNetCore
 
         public static bool SetCssEnvironmentValues()
         {
-            return FilterCapability.SetEnvironmentValues(CssUserName,CssUserPassword,CssHostname,CssAccount);
+            return ChangeItCapability.SetEnvironmentValues(CssUserName, CssUserPassword, CssHostname, CssAccount) &&
+              FilterCapability.SetEnvironmentValues(CssUserName, CssUserPassword, CssHostname, CssAccount);
         }
     }
 

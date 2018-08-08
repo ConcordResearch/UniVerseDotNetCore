@@ -55,6 +55,8 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
 
             try
             {
+                Console.WriteLine($"{lHostName}, {lUser}, {lAccount}, {lServiceType}");
+
                 //get the session object
                 us = UniObjects.OpenSession(lHostName, lUser, lPassword, lAccount, lServiceType);
 
@@ -107,6 +109,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
 
             try
             {
+                Console.WriteLine($"{lHostName}, {lUser}, {lAccount}, {lServiceType}");
                 //get the session object
                 us = UniObjects.OpenSession(lHostName, lUser, lPassword, lAccount, lServiceType);
 

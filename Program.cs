@@ -31,12 +31,12 @@ namespace UniVerseDotNetCore
                 .Build();
 
             var inTestMode = configuration.GetSection("RUN_IN_TEST_MODE").Value;
-            Console.Write($"In test mode? ({inTestMode})");
-            if (string.Compare(inTestMode, "Yes", CultureInfo.CurrentCulture, CompareOptions.IgnoreCase) == 0)
+             if (string.Compare(inTestMode, "Yes", CultureInfo.CurrentCulture, CompareOptions.IgnoreCase) == 0)
             {
                 CssAppConfig.RunInTestMode = true;
                 Console.WriteLine($" Using demo data ({CssAppConfig.RunInTestMode})");
             }
+            Console.Write($"In test mode? ({CssAppConfig.RunInTestMode})");
 
 
             CssAppConfig.CssUserName = configuration.GetSection("CSS_USERNAME").Value;
