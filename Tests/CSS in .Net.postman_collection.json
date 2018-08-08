@@ -6,150 +6,11 @@
 	},
 	"item": [
 		{
-			"name": "Account Code",
-			"description": "",
-			"item": [
-				{
-					"name": "Change Account Code",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"X\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.AZ2AJET1\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
-						},
-						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeAccountCode",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "{{DotNetCorePort}}",
-							"path": [
-								"api",
-								"ChangeAccountCode"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "DPL Code",
-			"description": "",
-			"item": [
-				{
-					"name": "Change Account Code",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"66006607200\"\n    },\n    \"typeOfChange\": \"DplCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
-						},
-						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeDplCode",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "{{DotNetCorePort}}",
-							"path": [
-								"api",
-								"ChangeDplCode"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Ledner Code",
-			"description": "",
-			"item": [
-				{
-					"name": "ChangeLenderCode",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"100\"\n    },\n    \"typeOfChange\": \"LenderCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
-						},
-						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeLenderCode",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "{{DotNetCorePort}}",
-							"path": [
-								"api",
-								"ChangeLenderCode"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Project Code",
-			"description": "",
-			"item": [
-				{
-					"name": "ChangeProjectCode",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"6607\"\n    },\n    \"typeOfChange\": \"ProjectCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
-						},
-						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/ChangeProjectCode",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "{{DotNetCorePort}}",
-							"path": [
-								"api",
-								"ChangeProjectCode"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
+			"_postman_id": "c15802fb-0343-4c4f-8bd4-001c76170999",
 			"name": "Filter Service",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "30570423-2157-4b3b-ae55-6d436b3f3cd2",
 					"name": "FilterContracts",
 					"event": [
 						{
@@ -181,10 +42,9 @@
 							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"6600\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"Contracts\"\r\n    },\r\n    \"Criteria\": [\r\n        {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"6606\"\r\n      },\r\n       {\r\n        \"Attribute\": \"LEND.CODE\",\r\n        \"Filter\": \"200\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"N\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
 						},
 						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/ContractsFilter",
-							"protocol": "https",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ContractsFilter",
 							"host": [
-								"localhost"
+								"{{APPIAN_URL}}"
 							],
 							"port": "{{DotNetCorePort}}",
 							"path": [
@@ -196,6 +56,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "96a80935-ca8a-44d3-8668-c4b577e63d85",
 					"name": "FilterMaint",
 					"event": [
 						{
@@ -227,10 +88,9 @@
 							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n      \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"FilterCriteria\": {\r\n  \t\"DeveloperCode\" : \"1075\",\r\n    \"CssFileName\": {\r\n      \"FileName\": \"MAINT\"\r\n    },\r\n    \"Criteria\": [\r\n       {\r\n        \"Attribute\": \"PROJ.CODE\",\r\n        \"Filter\": \"1076\"\r\n      },\r\n      {\r\n        \"Attribute\": \"AC\",\r\n        \"Filter\": \"H\"\r\n      }\r\n    ]\r\n  }\r\n  \r\n \r\n}"
 						},
 						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/MaintFilter",
-							"protocol": "https",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/MaintFilter",
 							"host": [
-								"localhost"
+								"{{APPIAN_URL}}"
 							],
 							"port": "{{DotNetCorePort}}",
 							"path": [
@@ -242,16 +102,16 @@
 					"response": []
 				},
 				{
+					"_postman_id": "2f7809ee-22db-4c3c-b2a5-4cb1af40c308",
 					"name": "Criterion",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/Criteria",
-							"protocol": "https",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/Criteria",
 							"host": [
-								"localhost"
+								"{{APPIAN_URL}}"
 							],
 							"port": "{{DotNetCorePort}}",
 							"path": [
@@ -265,10 +125,279 @@
 			]
 		},
 		{
-			"name": "File",
-			"description": "",
+			"_postman_id": "b2a6ee76-db1e-4c0c-af47-7caa0e706f9f",
+			"name": "Account Code",
 			"item": [
 				{
+					"_postman_id": "210ae13c-927d-400b-9efb-ede669de62be",
+					"name": "Change Account Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"H\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"3PEWHRRE\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeAccountCode",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"ChangeAccountCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "0cdbc5d0-9bcd-4fcf-935a-bd782d77721c",
+			"name": "Multi Note",
+			"item": [
+				{
+					"_postman_id": "9223d6a6-bb6c-45ac-ba84-5ece3ca94529",
+					"name": "Multi Notes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"H\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"3PEWHRRE\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/MultiNote",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"MultiNote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "4b3d150e-03b1-4a90-ab67-be7e54054bda",
+					"name": "Multi Notes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n   \"getList\": {\n        \"accountListName\": \"14VF4YGM\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   },\n    \"note\": {\n        \"message\": \"This is the note\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeAccountCode",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"ChangeAccountCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "86735396-c928-49ab-8d32-0ddaf618e563",
+			"name": "Custom GetLIst",
+			"item": [
+				{
+					"_postman_id": "e2acf672-d026-43ea-a728-1f8973e0e9a3",
+					"name": "Change Account Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"accounts\": [\n        \"10751111111\",\n        \"10752222222\"\n    ] ,\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/CustomGetLIst",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"CustomGetLIst"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"_postman_id": "46f2fddd-84f0-43e9-906e-a4048fcdb350",
+					"name": "Change Account Code",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"X\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.AZ2AJET1\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/CustomGetLIst",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"CustomGetLIst"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "83c6b45b-786c-456c-999f-bf6919adfb3e",
+			"name": "DPL Code",
+			"item": [
+				{
+					"_postman_id": "9a4fba79-2b20-40fc-8feb-879e3f2a29dc",
+					"name": "Change Account Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"66006607200\"\n    },\n    \"typeOfChange\": \"DplCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeDplCode",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"ChangeDplCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "793c5278-7747-4773-9d9c-b254d1d90725",
+			"name": "Ledner Code",
+			"item": [
+				{
+					"_postman_id": "415a4180-e593-413e-9c42-7b4a03f9203d",
+					"name": "ChangeLenderCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"100\"\n    },\n    \"typeOfChange\": \"LenderCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeLenderCode",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"ChangeLenderCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "210a35c4-e0da-4a8d-813c-4c8808e6ebd4",
+			"name": "Project Code",
+			"item": [
+				{
+					"_postman_id": "3f7c1deb-2062-4cf8-9fd2-5545d7dfd6e1",
+					"name": "ChangeProjectCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"6607\"\n    },\n    \"typeOfChange\": \"ProjectCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+						},
+						"url": {
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeProjectCode",
+							"host": [
+								"{{APPIAN_URL}}"
+							],
+							"port": "{{DotNetCorePort}}",
+							"path": [
+								"api",
+								"ChangeProjectCode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"_postman_id": "32bc9d80-5fd2-4929-a90d-25958077d8e7",
+			"name": "File",
+			"item": [
+				{
+					"_postman_id": "f39d2959-7e9d-4574-9d79-29254843879c",
 					"name": "File",
 					"event": [
 						{
@@ -300,10 +429,9 @@
 							"raw": "{\r\n  \"Credentials\": {\r\n    \"User\": \"{{Username}}\",\r\n    \"UserPassword\": \"{{Password}}\",\r\n    \"Hostname\": \"{{Hostname}}\",\r\n    \"Account\": \"CONCORD\",\r\n    \"ServiceType\": \"uvcs\"\r\n  },\r\n  \"CssDataFile\": {\r\n    \"AccountListName\": \"WTENUHL2\"\r\n  },\r\n  \"file\": {\r\n    \"fileName\": \"CONTRACTS\"\r\n  }\r\n}"
 						},
 						"url": {
-							"raw": "https://localhost:{{DotNetCorePort}}/api/AccountList",
-							"protocol": "https",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/AccountList",
 							"host": [
-								"localhost"
+								"{{APPIAN_URL}}"
 							],
 							"port": "{{DotNetCorePort}}",
 							"path": [
