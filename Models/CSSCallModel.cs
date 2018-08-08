@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
+using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 using UniVerseDotNetCore.Domain.Models;
 
-namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
+namespace UniVerseDotNetCore.Models
 {
     public class CssCallModel
     {
@@ -13,19 +14,19 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
         public CssCallModel(CssAccountFile file)
         {
             File = file;
-            Credentials = new CssCredentialsModel();
+            Credentials = new CssCredentials();
             CssDataFile = new AccountList() {AccountListName = "empty"};
             
         }
        
-        public CssCallModel(CssCredentialsModel credentials, AccountList accountList, CssAccountFile file)
+        public CssCallModel(CssCredentials credentials, AccountList accountList, CssAccountFile file)
         {
             Credentials = credentials;
             CssDataFile = accountList;
             File = file;
         }
 
-        public CssCredentialsModel Credentials { get; set; }
+        public CssCredentials Credentials { get; set; }
         public AccountList CssDataFile { get; set; }
         public CssAccountFile File { get; set; }
 

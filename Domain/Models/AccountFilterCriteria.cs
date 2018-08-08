@@ -18,17 +18,20 @@ namespace UniVerseDotNetCore.Domain.Models
             CssFileName = new T();
         }
 
+        // ReSharper disable once UnusedMember.Global
         public AccountFilterCriteria(string developerCode) : this()
         {
             DeveloperCode = developerCode;
         }
 
+        // ReSharper disable once UnusedMethodReturnValue.Global
         public List<Criterion> AddCriterion(Criterion criterion)
         {
             Criteria.Add(criterion);
             return Criteria;
         }
 
+        // ReSharper disable once UnusedMember.Global
         public List<Criterion> AddCriteria(IEnumerable<Criterion> criteria)
         {
             Criteria.ToList().AddRange(criteria);

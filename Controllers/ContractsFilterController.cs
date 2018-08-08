@@ -18,7 +18,7 @@ namespace UniVerseDotNetCore.Controllers {
             filtrCriteria.AddCriterion (new Criterion () { Attribute = "LEND.CODE", Filter = "100" });
             filtrCriteria.AddCriterion (new Criterion () { Attribute = "AC", Filter = "N" });
 
-            var credentials = new CssCredentialsModel ();
+            var credentials = new CssCredentials ();
             var model = new ContractsFilterCallModel () { Credentials = credentials, FilterCriteria = filtrCriteria };
             return new JsonResult (model);
         }
@@ -29,7 +29,7 @@ namespace UniVerseDotNetCore.Controllers {
             var usernameSplit = model.Credentials.User.Split ("\\");
             var username = usernameSplit.Length == 2 ? usernameSplit[1].ToUpper () : "unknown";
 
-            var listname = $"{username}.{model.FilterCriteria.CssFileName.ToString().ToUpper()}.{Utils.GetRandomString()}";
+            var listname = $"{Utils.GetRandomString()}";
             var name = new AccountList () { AccountListName = listname };
 
             if (CssAppConfig.RunInTestMode) {

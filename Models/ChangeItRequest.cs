@@ -11,7 +11,8 @@ namespace UniVerseDotNetCore.Models
         {
             
         }
-        public ChangeItRequest(string changeType, AccountList getList, CssCredentialsModel credentials, CssAccountFile file,Note note)
+        // ReSharper disable once UnusedMember.Global
+        public ChangeItRequest(string changeType, AccountList getList, CssCredentials credentials, CssAccountFile file,Note note)
         {
             TypeOfChange = changeType;
             GetListName = getList;
@@ -24,7 +25,7 @@ namespace UniVerseDotNetCore.Models
         public string TypeOfChange { get; set; }
 
         public AccountList GetListName { get; set; }
-        public CssCredentialsModel Credentials { get; set; }
+        public CssCredentials Credentials { get; set; }
         public CssAccountFile File { get; set; }
         public Note Note { get; set; }
     }

@@ -16,14 +16,14 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
             return path;
         }
 
-        public static CssFileResult GetData(AccountList list, CssAccountFile file, CssCredentialsModel cssCredentialsModel)
+        public static CssFileResult GetData(AccountList list, CssAccountFile file, CssCredentials cssCredentials)
         {
 
-            var lHostName = cssCredentialsModel.Hostname;
-            var lAccount = cssCredentialsModel.Account;
-            var lUser = cssCredentialsModel.User;
-            var lPassword = cssCredentialsModel.UserPassword;
-            var lServiceType = cssCredentialsModel.ServiceType;
+            var lHostName = cssCredentials.Hostname;
+            var lAccount = cssCredentials.Account;
+            var lUser = cssCredentials.User;
+            var lPassword = cssCredentials.UserPassword;
+            var lServiceType = cssCredentials.ServiceType;
 
             var response = new CssFileResult();
             var fileResults = new CssFile {FileName = list.AccountListName};

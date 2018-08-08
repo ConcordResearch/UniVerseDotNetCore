@@ -1,36 +1,34 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using Microsoft.AspNetCore.Mvc;
 using UniVerseDotNetCore.Domain.CssServiceLayer;
-using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 using UniVerseDotNetCore.Domain.Models;
 using UniVerseDotNetCore.Models;
-
 
 namespace UniVerseDotNetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MaintFilterController : ControllerBase
+    public class CustomGetListController : ControllerBase
     {
-       
+        // GET: api/CustomGetList
         [HttpGet]
-        public ActionResult<MaintFilterCallModel> GetMaintFileModel()
+        public CustomGetList Get()
         {
-            var filtrCriteria = new AccountFilterCriteria<Maint>();
-            filtrCriteria.AddCriterion(new Criterion() { Attribute = "DEV.CODE", Filter = "1075" });
-            var credentials = new CssCredentials();
-            var model = new MaintFilterCallModel(){Credentials = credentials,FilterCriteria = filtrCriteria};
-            return model;
+            var accounts = new CustomGetList() {Accounts = new[] { "12345678911","212345678901"}};
+            return accounts;
         }
-    
-        [HttpPost] 
-        public ActionResult<string> ReturnMaintFile([FromBody] MaintFilterCallModel model)
+ 
+
+        // POST: api/CustomGetList
+        [HttpPost]
+        public ActionResult Post([FromBody] CustomGetList model)
         {
             var usernameSplit = model.Credentials.User.Split("\\");
             var username = usernameSplit.Length == 2 ? usernameSplit[1].ToUpper() : "unknown";
 
             var listname = $"{Utils.GetRandomString()}";
-            var name = new AccountList(){AccountListName = listname};
+            var name = new AccountList() { AccountListName = listname };
 
             if (CssAppConfig.RunInTestMode)
             {
@@ -45,9 +43,8 @@ namespace UniVerseDotNetCore.Controllers
                 return new JsonResult(new { ListName = name.ToString(), FilterResultLog = results });
             }
 
-            CssCommandResult data = FilterCapability.FilterMaint(model.FilterCriteria, name, model.Credentials);
+            CssCommandResult data = FilterCapability.MakeCustomGetList(model.Accounts, name, model.Credentials);
             return new JsonResult(new { ListName = name.ToString(), FilterResultLog = data });
-
 
         }
 

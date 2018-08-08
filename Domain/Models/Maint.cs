@@ -8,6 +8,7 @@
         {
             get => _fileName;
 
+            // ReSharper disable once ValueParameterNotUsed
             set => _fileName = GetType().Name.ToUpper();
         }
 

@@ -6,12 +6,13 @@ using UniVerseDotNetCore.Models;
 
 namespace UniVerseDotNetCore.Domain.CssServiceLayer {
     public static class ChangeItCapability {
-        private static string _cssUserName = null;
-        private static string _cssUserPassword = null;
-        private static string _cssHostname = null;
-        private static string _cssAccount = null;
+        private static string _cssUserName;
+        private static string _cssUserPassword;
+        private static string _cssHostname;
+        private static string _cssAccount;
         private const string CssServiceType = "uvcs";
 
+        // ReSharper disable once UnusedMember.Global
         public static bool SetEnvironmentValues(string userName, string userPassword, string hostname, string account)
         {
             _cssUserName = userName;
@@ -21,29 +22,29 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer {
 
             return true; //in case we need validation in future
         }
-        public static CssCommandResult ChangeLenderCode (CssAccountFile file, AccountList list, LenderCode newCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
+        public static CssCommandResult ChangeLenderCode (CssAccountFile file, AccountList list, LenderCode newCode, Note changeNote, CssCredentials cssCredentials) {
 
-            return ChangeIt2 (file, list, "", "", newCode.Code, "", changeNote, cssCredentialsModel);
+            return ChangeIt2 (file, list, "", "", newCode.Code, "", changeNote, cssCredentials);
         }
-        public static CssCommandResult ChangeProjectCode (CssAccountFile file, AccountList list, ProjectCode newCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
+        public static CssCommandResult ChangeProjectCode (CssAccountFile file, AccountList list, ProjectCode newCode, Note changeNote, CssCredentials cssCredentials) {
 
-            return ChangeIt2 (file, list, "", newCode.Code, "", "", changeNote, cssCredentialsModel);
+            return ChangeIt2 (file, list, "", newCode.Code, "", "", changeNote, cssCredentials);
         }
-        public static CssCommandResult ChangeAccountCode (CssAccountFile file, AccountList list, AccountCode newCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
+        public static CssCommandResult ChangeAccountCode (CssAccountFile file, AccountList list, AccountCode newCode, Note changeNote, CssCredentials cssCredentials) {
 
-            return ChangeIt2 (file, list, "", "", "", newCode.Code, changeNote, cssCredentialsModel);
+            return ChangeIt2 (file, list, "", "", "", newCode.Code, changeNote, cssCredentials);
         }
-        public static CssCommandResult ChangeDplCode (CssAccountFile file, AccountList list, DplCode newCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
+        public static CssCommandResult ChangeDplCode (CssAccountFile file, AccountList list, DplCode newCode, Note changeNote, CssCredentials cssCredentials) {
 
-            return ChangeIt2 (file, list, newCode.GetDeveloperCode (), newCode.GetProjectCode (), newCode.GetLenderCode (), "", changeNote, cssCredentialsModel);
+            return ChangeIt2 (file, list, newCode.GetDeveloperCode (), newCode.GetProjectCode (), newCode.GetLenderCode (), "", changeNote, cssCredentials);
         }
-        private static CssCommandResult ChangeIt2 (CssAccountFile file, AccountList list, string developerCode, string projectCode, string lenderCode, string accountCode, Note changeNote, CssCredentialsModel cssCredentialsModel) {
+        private static CssCommandResult ChangeIt2 (CssAccountFile file, AccountList list, string developerCode, string projectCode, string lenderCode, string accountCode, Note changeNote, CssCredentials cssCredentials) {
             var result = new CssCommandResult ();
 
-            var lHostName = _cssHostname ?? cssCredentialsModel.Hostname;
-            var lAccount = _cssAccount ?? cssCredentialsModel.Account;
-            var lUser = _cssUserName ?? cssCredentialsModel.User;
-            var lPassword = _cssUserPassword ?? cssCredentialsModel.UserPassword;
+            var lHostName = _cssHostname ?? cssCredentials.Hostname;
+            var lAccount = _cssAccount ?? cssCredentials.Account;
+            var lUser = _cssUserName ?? cssCredentials.User;
+            var lPassword = _cssUserPassword ?? cssCredentials.UserPassword;
             const string lServiceType = CssServiceType;
 
             string fileInitial = file.FileName.ToCharArray () [0].ToString ();
@@ -71,7 +72,7 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer {
                 //result.Results.Add(new CommandResponse("N", cmd.Response));
 
                 //ENTER NEW DEVELOPER CODE, IF ANY ?
-                if (developerCode != null && developerCode != "") {
+                if (!string.IsNullOrEmpty(developerCode)) {
                     cmd.Reply ($"{developerCode}");
                     //result.Results.Add(new CommandResponse($"{developerCode}", cmd.Response));
 

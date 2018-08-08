@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-
 namespace UniVerseDotNetCore.Domain.Models {
     public class DplCode : IChangeIt2 {
         public DplCode () {
@@ -9,11 +7,12 @@ namespace UniVerseDotNetCore.Domain.Models {
         public DplCode (string dplCode) {
             Code = dplCode;
         }
-        private string _Code;
+        private string _code;
         public string Code {
-            get { return _Code; }
+            // ReSharper disable once UnusedMember.Global
+            get => _code;
             set {
-                _Code = value;
+                _code = value;
                 if (value.Length == 11) {
                     DeveloperCode = value.Substring (0, 4);
                     ProjectCode = value.Substring (4, 4);

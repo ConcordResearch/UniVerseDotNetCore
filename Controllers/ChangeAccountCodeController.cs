@@ -17,7 +17,7 @@ namespace UniVerseDotNetCore.Controllers
             var sample = new ChangeItRequest<AccountCode>
             {
                 Note = new Note("This is a note"),
-                Credentials = new CssCredentialsModel(),
+                Credentials = new CssCredentials(),
                 File = new Contracts(),
                 GetListName = new AccountList("NameOfAccountList"),
                 TypeOfChange = "AccountCode",

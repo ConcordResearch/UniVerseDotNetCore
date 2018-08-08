@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
+﻿using UniVerseDotNetCore.Domain.CssServiceLayer.Models;
 
 namespace UniVerseDotNetCore.Models
 {

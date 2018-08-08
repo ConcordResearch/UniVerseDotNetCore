@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using UniVerseDotNetCore.Models;
 using UniVerseDotNetCore.Domain.CssServiceLayer;
@@ -18,7 +20,7 @@ namespace UniVerseDotNetCore.Controllers
             var sample = new ChangeItRequest<DplCode>
             {
                 Note = new Note("This is a note"),
-                Credentials = new CssCredentialsModel(),
+                Credentials = new CssCredentials(),
                 File = new Contracts(),
                 GetListName = new AccountList("NameOfAccountList"),
                 TypeOfChange = "DplCode",
@@ -43,13 +45,15 @@ namespace UniVerseDotNetCore.Controllers
                 };
                 return new JsonResult(results);
             }
-            System.Console.WriteLine($"TESTING: {request.NewCode.GetDeveloperCode()}, {request.NewCode.GetProjectCode()}, {request.NewCode.GetLenderCode()}");
+            Console.WriteLine($"TESTING: {request.NewCode.GetDeveloperCode()}, {request.NewCode.GetProjectCode()}, {request.NewCode.GetLenderCode()}");
             var response = 
             ChangeItCapability.ChangeDplCode(request.File,
                                     request.GetListName,
                                     request.NewCode,
                                     request.Note,
                                     request.Credentials);
+
+            Console.WriteLine(JsonConvert.SerializeObject(response));
             return new JsonResult(response);
         }
      

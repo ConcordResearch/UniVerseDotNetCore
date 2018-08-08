@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
  
@@ -23,41 +22,29 @@ namespace UniVerseDotNetCore.Controllers
         }
 
         // Initialize the data for the demo. These should be removed if we can get the Developers, Projects and Lenders from the Universe DB
-        static Node[] Developers = new Node[]
+        static readonly Node[] Developers = new Node[]
         {
         
-            new Node("0080", "Developer 0080"),
-            new Node("0080", "Developer 0080"),
-            new Node("0080", "Developer 0080"),
-            new Node("0080", "Developer 0080"),
-            new Node("0080", "Developer 0080"),
-            new Node("0095", "Developer 0095"),
-            new Node("0095", "Developer 0095"),
-            new Node("0095", "Developer 0095")
+            //new Node("0080", "Client A (0080)"),
+            new Node("0095", "Client A (0095)")
             
         };                              
-        static Node[] Projects = new Node[]
+        static readonly Node[] Projects = new Node[]
         {
-            new Node("0080", "Project 0080"),
-            new Node("0081", "Project 0081"),
-            new Node("0082", "Project 0082"),
-            new Node("0083", "Project 0083"),
-            new Node("0084", "Project 0084"),
-            new Node("0095", "Project 0095"),
-            new Node("0095", "Project 0095"),
-            new Node("0096", "Project 0096")
+            new Node("0080", "Project A (0080)"),
+            new Node("0081", "Project B (0081)"),
+            new Node("0082", "Project C (0082)"),
+            new Node("0083", "Project D (0083)"),
+            new Node("0084", "Project E (0084)"),
+            new Node("0095", "Project F (0095)"),
+            new Node("0096", "Project G (0096)")
         };
-        static Node[] Lenders = new Node[]
+        static readonly Node[] Lenders = new Node[]
         {
-            new Node("100", "Lender 100"),
-            new Node("100", "Lender 100"),
-            new Node("100", "Lender 100"),
-            new Node("100", "Lender 100"),
-            new Node("100", "Lender 100"),
-            new Node("101", "Lender 100"),
-            new Node("201", "Lender 100"),
-            new Node("101", "Lender 101")
-                      
+            
+            new Node("101", "Lender ABC (101)"),
+            new Node("201", "Lender XZY (201)"),
+            new Node("400", "Lender DEF (400)")
         };            
 
         /// <summary>
@@ -68,7 +55,7 @@ namespace UniVerseDotNetCore.Controllers
         [HttpGet("developers")]
         public string GetDevelopers()
         {
-            Console.WriteLine($"Received request for developers");
+            Console.WriteLine("Received request for developers");
 
             return JsonConvert.SerializeObject(Developers);
         }

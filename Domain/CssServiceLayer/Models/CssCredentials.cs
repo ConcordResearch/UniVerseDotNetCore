@@ -1,6 +1,6 @@
 ﻿namespace UniVerseDotNetCore.Domain.CssServiceLayer.Models
 {
-    public class CssCredentialsModel
+    public class CssCredentials
     { 
         public string User { get; set; }
         public string UserPassword { get; set; }

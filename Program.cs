@@ -7,7 +7,8 @@ using Microsoft.Extensions.Configuration;
 
 namespace UniVerseDotNetCore
 {
-    public partial class Program
+    // ReSharper disable once ClassNeverInstantiated.Global
+    public class Program
     {
         public static void Main(string[] args)
         {
@@ -24,7 +25,7 @@ namespace UniVerseDotNetCore
             Console.WriteLine($"OSDescription:          {RuntimeInformation.OSDescription}");
             Console.WriteLine($"OSArchitecture:         {RuntimeInformation.OSArchitecture}");
             Console.WriteLine($"ProcessArchitecture:    {RuntimeInformation.ProcessArchitecture}");
-            
+
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
                 .Build();
@@ -45,9 +46,15 @@ namespace UniVerseDotNetCore
             var setValues = CssAppConfig.SetCssEnvironmentValues();
             if (!setValues)
             {
-                Console.WriteLine($"Error setting environment values for CSS.");
+                Console.WriteLine("Error setting environment values for CSS.");
                 return;
             }
+
+            var passwordSet = string.IsNullOrEmpty(CssAppConfig.CssUserPassword) ? "Not Set" : "Set";
+            Console.WriteLine($"CssUserName     ={CssAppConfig.CssUserName     }");
+            Console.WriteLine($"CssUserPassword ={passwordSet}");
+            Console.WriteLine($"CssAccount      ={CssAppConfig.CssAccount      }");
+            Console.WriteLine($"CssHostname     ={CssAppConfig.CssHostname     }");
 
             CreateWebHostBuilder(args).Build().Run();
 
