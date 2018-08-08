@@ -15,7 +15,7 @@ namespace UniVerseDotNetCore.Controllers
         [HttpGet]
         public CustomGetList Get()
         {
-            var acts = new List<AccountModel>() {new AccountModel("12345678911"), new AccountModel("212345678901")};
+            var acts = new List<string> {"12345678911", "212345678901"};
             var accounts = new CustomGetList {Accounts = acts};
             return accounts;
         }

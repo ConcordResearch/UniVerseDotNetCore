@@ -18,7 +18,6 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
 
         public static CssFileResult GetData(AccountList list, CssAccountFile file, CssCredentials cssCredentials)
         {
-
             var lHostName = cssCredentials.Hostname;
             var lAccount = cssCredentials.Account;
             var lUser = cssCredentials.User;
