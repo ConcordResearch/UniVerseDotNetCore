@@ -6,11 +6,11 @@
 	},
 	"item": [
 		{
-			"_postman_id": "89547a87-38d4-4622-b8bc-6b7c7cd7fc06",
+			"_postman_id": "b8b4e244-4e80-4605-9e18-6f86dd503ff6",
 			"name": "Filter Service",
 			"item": [
 				{
-					"_postman_id": "5d53712f-0e2f-42ae-810d-402a1881bbcf",
+					"_postman_id": "2d830179-a9c0-4db1-8794-11ae12a4e350",
 					"name": "FilterContracts",
 					"event": [
 						{
@@ -56,7 +56,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "6f843998-91f5-4bec-a774-eaf46a644de6",
+					"_postman_id": "2b8b10c7-28b8-47e1-b65d-8cb5c8644c79",
 					"name": "FilterMaint",
 					"event": [
 						{
@@ -102,7 +102,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "d712cea9-7ddf-4f8c-b7d6-1356d98f6f7e",
+					"_postman_id": "ffc8ce43-9949-4bee-bd0c-68da3fa20ea8",
 					"name": "Criterion",
 					"request": {
 						"method": "GET",
@@ -125,11 +125,11 @@
 			]
 		},
 		{
-			"_postman_id": "fcb463ad-0122-4e38-8bf7-ba34c43edcf7",
+			"_postman_id": "b11cfd85-78bb-445c-868d-2f56365c6d24",
 			"name": "Account Code",
 			"item": [
 				{
-					"_postman_id": "740fd158-661f-489d-bfad-98cccd24baca",
+					"_postman_id": "a17bb576-129e-457a-ae59-7921b5b41331",
 					"name": "Change Account Code",
 					"request": {
 						"method": "POST",
@@ -141,7 +141,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"H\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"3PEWHRRE\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"N\"\n    },\n    \"typeOfChange\": \"AccountCode\",\n    \"getListName\": {\n        \"accountListName\": \"OJXDSTZM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
 						},
 						"url": {
 							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeAccountCode",
@@ -160,11 +160,11 @@
 			]
 		},
 		{
-			"_postman_id": "986ee644-5429-4a64-beae-d1f856969f34",
+			"_postman_id": "cf7f658b-bc3a-472e-9151-b52e82278bb9",
 			"name": "Multi Note",
 			"item": [
 				{
-					"_postman_id": "bda8387b-ae06-4dbc-95f6-a14e442dbe7a",
+					"_postman_id": "04b0d0ee-8572-4ae5-8c6c-e37d28de7b1d",
 					"name": "Multi Notes",
 					"request": {
 						"method": "GET",
@@ -193,7 +193,7 @@
 					"response": []
 				},
 				{
-					"_postman_id": "c8d6d086-6f62-467e-a8c7-5e48e4c46619",
+					"_postman_id": "5fc971a6-4109-4445-b91d-e922194fa38b",
 					"name": "Multi Notes",
 					"request": {
 						"method": "POST",
@@ -205,17 +205,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n   \"getList\": {\n        \"accountListName\": \"14VF4YGM\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   },\n    \"note\": {\n        \"message\": \"This is the note\"\n    }\n}"
+							"raw": "{ \n   \"getList\": {\n        \"accountListName\": \"OJXDSTZM\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   },\n    \"note\": {\n        \"message\": \"Testing multi-notes\"\n    }\n}"
 						},
 						"url": {
-							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeAccountCode",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/MultiNote",
 							"host": [
 								"{{APPIAN_URL}}"
 							],
 							"port": "{{DotNetCorePort}}",
 							"path": [
 								"api",
-								"ChangeAccountCode"
+								"MultiNote"
 							]
 						}
 					},
@@ -224,12 +224,12 @@
 			]
 		},
 		{
-			"_postman_id": "fab65c86-bb68-4208-9a13-99ba45077aff",
+			"_postman_id": "085ec014-41d8-4394-8466-1c25e8a8cb72",
 			"name": "Custom GetLIst",
 			"item": [
 				{
-					"_postman_id": "759023ec-3637-47d2-9903-93126fef627d",
-					"name": "Change Account Code",
+					"_postman_id": "2d5b5552-4642-4cd7-ac66-d1e4e6c0c9c8",
+					"name": "Custom Get-List",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -257,8 +257,8 @@
 					"response": []
 				},
 				{
-					"_postman_id": "872725d8-27e8-480d-b98d-b67db07378d9",
-					"name": "Change Account Code",
+					"_postman_id": "26a0c621-e07a-4d28-be41-4e03e3d76b95",
+					"name": "Custom Get-List",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -288,11 +288,11 @@
 			]
 		},
 		{
-			"_postman_id": "8d61bb4e-e48d-410b-858f-360b830f1dbd",
+			"_postman_id": "cac93b48-940b-4f98-8522-41a9ffe618c1",
 			"name": "DPL Code",
 			"item": [
 				{
-					"_postman_id": "2cccb79d-9201-4db2-8bdc-c41f05cec4ca",
+					"_postman_id": "11f10119-0e98-4825-bd01-59c4fc013b05",
 					"name": "Change Account Code",
 					"request": {
 						"method": "POST",
@@ -304,7 +304,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"CONTRACTS\"\n    },\n    \"newCode\": {\n        \"code\": \"66006607200\"\n    },\n    \"typeOfChange\": \"DplCode\",\n    \"getListName\": {\n        \"accountListName\": \"AGHERRERA.CONTRACTS.J05WNLFM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
+							"raw": "{ \n\t\"file\": {\n        \"fileName\": \"MAINT\"\n    },\n    \"newCode\": {\n        \"code\": \"10751075400\"\n    },\n    \"typeOfChange\": \"DplCode\",\n    \"getListName\": {\n        \"accountListName\": \"OJXDSTZM\"\n    },\n     \"note\": {\n        \"message\": \"This is MY note.\"\n    },\n    \"Credentials\": {\n    \"User\": \"{{Username}}\",\n    \"UserPassword\": \"{{Password}}\",\n      \"Hostname\": \"{{Hostname}}\",\n    \"Account\": \"CONCORD\",\n    \"ServiceType\": \"uvcs\"\n   }\n}"
 						},
 						"url": {
 							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/ChangeDplCode",
@@ -323,11 +323,11 @@
 			]
 		},
 		{
-			"_postman_id": "301c5953-0c9c-4b7a-9715-c77db4b22530",
+			"_postman_id": "61d84f53-c1d2-494c-b28a-0b641c02b204",
 			"name": "Ledner Code",
 			"item": [
 				{
-					"_postman_id": "9ea10c46-92aa-47cc-935c-dba935c92f35",
+					"_postman_id": "bdf80ef8-9aaf-4445-bb61-6c3d0ba081b2",
 					"name": "ChangeLenderCode",
 					"request": {
 						"method": "POST",
@@ -358,11 +358,11 @@
 			]
 		},
 		{
-			"_postman_id": "0c22b251-c1f3-4330-bf15-662c26880304",
+			"_postman_id": "c5943d8a-1a77-4249-84c7-cdc79d380653",
 			"name": "Project Code",
 			"item": [
 				{
-					"_postman_id": "4c18b9f6-2983-49ce-923b-32519eb7c1dd",
+					"_postman_id": "8666af7d-c4ab-400e-88f5-0f45874515e3",
 					"name": "ChangeProjectCode",
 					"request": {
 						"method": "POST",
@@ -393,11 +393,11 @@
 			]
 		},
 		{
-			"_postman_id": "acb16ca6-eddf-496a-a9d6-e068eaee3a38",
+			"_postman_id": "cc3c6c64-cafb-4aa9-a477-a7f38dbebd74",
 			"name": "File",
 			"item": [
 				{
-					"_postman_id": "0eb06b09-a5df-49b9-bc62-bfdd080123c8",
+					"_postman_id": "83cc0d61-b62f-40f5-9ca4-507abba88025",
 					"name": "File",
 					"event": [
 						{
@@ -445,15 +445,20 @@
 			]
 		},
 		{
-			"_postman_id": "ae7d7820-8d71-4c99-8d8e-64b1ba3c7d0c",
+			"_postman_id": "47dc0e13-c645-40dc-a5f0-bae5bd04cec9",
 			"name": "Hierarchy",
 			"item": [
 				{
-					"_postman_id": "014e3941-a4a4-474e-bccd-60636f0c1bc8",
+					"_postman_id": "dd52e1db-1b6b-41ae-8e71-1d398101275f",
 					"name": "Developers",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {},
 						"url": {
 							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/Hierarchy/developers",
@@ -471,14 +476,19 @@
 					"response": []
 				},
 				{
-					"_postman_id": "c4764142-6425-4498-b1b7-4359c070f76c",
+					"_postman_id": "0dd4a574-da1f-49b2-b88c-46024081a07f",
 					"name": "Projects",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {},
 						"url": {
-							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/Hierarchy/developers",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/Hierarchy/projects",
 							"host": [
 								"{{APPIAN_URL}}"
 							],
@@ -486,21 +496,26 @@
 							"path": [
 								"api",
 								"Hierarchy",
-								"developers"
+								"projects"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"_postman_id": "8966a13a-2b3d-4b56-8136-9273772e04f6",
+					"_postman_id": "107db6cb-c00c-41d0-a448-f8ffcfedf774",
 					"name": "Lenders",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {},
 						"url": {
-							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/Hierarchy/developers",
+							"raw": "{{APPIAN_URL}}:{{DotNetCorePort}}/api/Hierarchy/lenders",
 							"host": [
 								"{{APPIAN_URL}}"
 							],
@@ -508,7 +523,7 @@
 							"path": [
 								"api",
 								"Hierarchy",
-								"developers"
+								"lenders"
 							]
 						}
 					},
