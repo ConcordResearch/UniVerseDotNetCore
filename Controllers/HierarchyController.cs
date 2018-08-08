@@ -23,28 +23,27 @@ namespace UniVerseDotNetCore.Controllers
 
         // Initialize the data for the demo. These should be removed if we can get the Developers, Projects and Lenders from the Universe DB
         static readonly Node[] Developers = new Node[]
-        {
-        
-            //new Node("0080", "Client A (0080)"),
-            new Node("0095", "Client A (0095)")
-            
+        {        
+            new Node("0099", "Client A (0099)")           
         };                              
         static readonly Node[] Projects = new Node[]
         {
-            new Node("0080", "Project A (0080)"),
-            new Node("0081", "Project B (0081)"),
-            new Node("0082", "Project C (0082)"),
-            new Node("0083", "Project D (0083)"),
-            new Node("0084", "Project E (0084)"),
-            new Node("0095", "Project F (0095)"),
-            new Node("0096", "Project G (0096)")
+            new Node("0090", "Project A (0090)"),
+            new Node("0092", "Project B (0092)"),
+            new Node("0094", "Project C (0094)"),
+            new Node("0095", "Project D (0095)"),
+            new Node("0096", "Project E (0096)"),
+            new Node("0098", "Project F (0098)"),
+            new Node("0099", "Project G (0099)")
         };
         static readonly Node[] Lenders = new Node[]
         {
+				
+			new Node("100", "Lender ABC (100)"),
+			new Node("201", "Lender ABC (201)"),
+            new Node("400", "Lender ABC (400)"),
+            new Node("600", "Lender XYZ (600)")
             
-            new Node("101", "Lender ABC (101)"),
-            new Node("201", "Lender XZY (201)"),
-            new Node("400", "Lender DEF (400)")
         };            
 
         /// <summary>
