@@ -28,21 +28,14 @@ namespace UniVerseDotNetCore.Controllers
         };                              
         static readonly Node[] Projects = new Node[]
         {
-            new Node("0090", "Project A (0090)"),
-            new Node("0092", "Project B (0092)"),
-            new Node("0094", "Project C (0094)"),
-            new Node("0095", "Project D (0095)"),
-            new Node("0096", "Project E (0096)"),
+
             new Node("0098", "Project F (0098)"),
             new Node("0099", "Project G (0099)")
         };
         static readonly Node[] Lenders = new Node[]
         {
-				
-			new Node("100", "Lender ABC (100)"),
-			new Node("201", "Lender ABC (201)"),
-            new Node("400", "Lender ABC (400)"),
-            new Node("600", "Lender XYZ (600)")
+			new Node("201", "House (201)"),
+            new Node("600", "Lender ABC (600)")
             
         };            
 
@@ -52,11 +45,11 @@ namespace UniVerseDotNetCore.Controllers
         /// <returns>Json array of the Developer codes and the text names of the Developers.</returns>
  
         [HttpGet("developers")]
-        public string GetDevelopers()
+        public JsonResult GetDevelopers()
         {
             Console.WriteLine("Received request for developers");
 
-            return JsonConvert.SerializeObject(Developers);
+            return new JsonResult(Developers);
         }
 
         /// <summary>
@@ -65,12 +58,12 @@ namespace UniVerseDotNetCore.Controllers
         /// <returns>Json array of the Lender codes and the text names of the Projects.</returns>
 
         [HttpGet("projects")]
-        public string GetProjects([FromQuery(Name = "developers")] string developers)
+        public JsonResult GetProjects([FromQuery(Name = "developers")] string developers)
         {
             var jsonDevelopers = JsonConvert.SerializeObject(developers);
             Console.WriteLine($"Received request for projects given the developers: {jsonDevelopers}");
 
-            return JsonConvert.SerializeObject(Projects);
+            return new JsonResult(Projects);
         }
 
         /// <summary>
@@ -79,12 +72,12 @@ namespace UniVerseDotNetCore.Controllers
         /// <returns>Json array of the Lender codes and the text names of the Lenders.</returns>
 
         [HttpGet("lenders")]
-        public string GetLenders([FromQuery(Name = "developers")] string developers)
+        public JsonResult GetLenders([FromQuery(Name = "developers")] string developers)
         {
             var jsonDevelopers = JsonConvert.SerializeObject(developers);
             Console.WriteLine($"Received request for projects given the developers: {jsonDevelopers}");
 
-            return JsonConvert.SerializeObject(Lenders);
+            return new JsonResult(Lenders);
         }
 
     }
