@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -36,7 +37,16 @@ namespace UniVerseDotNetCore.Middleware
                     var bodyAsText = bodyReader.ReadToEnd();
                     if (string.IsNullOrWhiteSpace(bodyAsText) == false)
                     {
-                        requestLog += $", Body : {JValue.Parse(bodyAsText).ToString(Formatting.Indented)}";
+                        var converted = "";
+                        try
+                        {
+                            converted = JValue.Parse(bodyAsText).ToString(Formatting.Indented);
+                        }
+                        catch (Exception e)
+                        {
+                            converted = $"{e.Message}";
+                        }
+                        requestLog += $", Body : {converted}";
                     }
 
                     var bytesToWrite = Encoding.UTF8.GetBytes(bodyAsText);

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -34,7 +35,18 @@ namespace UniVerseDotNetCore.Middleware
 
                 responseBodyStream.Seek(0, SeekOrigin.Begin);
                 var responseBody = new StreamReader(responseBodyStream).ReadToEnd();
-                _logger.LogDebug($"RESPONSE LOG: {JValue.Parse(responseBody).ToString(Formatting.Indented)}");
+
+                var converted = "";
+                try
+                {
+                    converted = JValue.Parse(responseBody).ToString(Formatting.Indented);
+                }
+                catch (Exception e)
+                {
+                    converted = $"{e.Message}";
+                }
+                
+                _logger.LogDebug($"RESPONSE LOG: {converted}");
                 responseBodyStream.Seek(0, SeekOrigin.Begin);
                 await responseBodyStream.CopyToAsync(bodyStream);
 
