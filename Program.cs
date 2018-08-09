@@ -13,48 +13,44 @@ namespace UniVerseDotNetCore
         public static void Main(string[] args)
         {
 
-
-            //if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            //{
-            //}
-            //else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ||
-            //         RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            //{
-            //}
             Console.WriteLine($"FrameworkDescription:   {RuntimeInformation.FrameworkDescription}");
             Console.WriteLine($"OSDescription:          {RuntimeInformation.OSDescription}");
             Console.WriteLine($"OSArchitecture:         {RuntimeInformation.OSArchitecture}");
             Console.WriteLine($"ProcessArchitecture:    {RuntimeInformation.ProcessArchitecture}");
-
+            
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
                 .Build();
 
             var inTestMode = configuration.GetSection("RUN_IN_TEST_MODE").Value;
-             if (string.Compare(inTestMode, "Yes", CultureInfo.CurrentCulture, CompareOptions.IgnoreCase) == 0)
+
+            var testModeCheck =
+                string.Compare(inTestMode, "Yes", CultureInfo.CurrentCulture, CompareOptions.IgnoreCase);
+
+             if (testModeCheck == 0)
             {
                 CssAppConfig.RunInTestMode = true;
-                Console.WriteLine($" Using demo data ({CssAppConfig.RunInTestMode})");
+                Console.WriteLine($" Using demo data? ({CssAppConfig.RunInTestMode})");
             }
+
             Console.Write($"In test mode? ({CssAppConfig.RunInTestMode})");
-
-
+            
             CssAppConfig.CssUserName = configuration.GetSection("CSS_USERNAME").Value;
             CssAppConfig.CssUserPassword = configuration.GetSection("CSS_USERPASSWORD").Value;
             CssAppConfig.CssAccount = configuration.GetSection("CSS_ACCOUNT").Value;
             CssAppConfig.CssHostname = configuration.GetSection("CSS_HOSTNAME").Value;
+
             var setValues = CssAppConfig.SetCssEnvironmentValues();
+
             if (!setValues)
-            {
-                Console.WriteLine("Error setting environment values for CSS.");
-                return;
-            }
+                throw new Exception("Error setting environment values for CSS.");
 
             var passwordSet = string.IsNullOrEmpty(CssAppConfig.CssUserPassword) ? "Not Set" : "Set";
-            Console.WriteLine($"CssUserName     ={CssAppConfig.CssUserName     }");
-            Console.WriteLine($"CssUserPassword ={passwordSet}");
-            Console.WriteLine($"CssAccount      ={CssAppConfig.CssAccount      }");
-            Console.WriteLine($"CssHostname     ={CssAppConfig.CssHostname     }");
+
+            Console.WriteLine($"CssUserName     = {CssAppConfig.CssUserName}");
+            Console.WriteLine($"CssUserPassword = {passwordSet}");
+            Console.WriteLine($"CssAccount      = {CssAppConfig.CssAccount}");
+            Console.WriteLine($"CssHostname     = {CssAppConfig.CssHostname}");
 
             CreateWebHostBuilder(args).Build().Run();
 

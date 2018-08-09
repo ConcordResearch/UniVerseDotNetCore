@@ -55,6 +55,8 @@ namespace UniVerseDotNetCore.Domain.Models
 
             foreach (var filter in Criteria)
             {
+                if(string.IsNullOrWhiteSpace(filter.Filter)) continue;
+                
                 if (!query.ToString().EndsWith("WITH "))
                 {
                     query.Append( " AND ");

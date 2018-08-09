@@ -37,7 +37,9 @@ namespace UniVerseDotNetCore.Domain.CssServiceLayer
         {
             return Filter("ACTIVE.IDX", contractsFilter.DeveloperCode, contractsFilter.ToString(), saveList, cssCredentials);
         }
-        public static CssCommandResult MakeCustomGetList(IEnumerable<string> list, AccountList saveList, CssCredentials cssCredentials)
+        public static CssCommandResult MakeCustomGetList(IEnumerable<string> list, 
+            AccountList saveList, 
+            CssCredentials cssCredentials)
         {
             return CustomGetList(list, saveList, cssCredentials);
         }
